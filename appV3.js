@@ -1,3 +1,11 @@
+class Resident {
+  constructor(planet, residentName, species) {
+    this.planet = planet;
+    this.resident = residentName;
+    this.species = species;
+  }
+}
+
 async function fetchDataPlanets() {
   const fetchPromise = await fetch('https://swapi.dev/api/planets');
   const planetsList = await fetchPromise.json();
@@ -52,11 +60,4 @@ async function fetchDataPlanets() {
   console.table(result);
 }
 
-class Resident {
-  constructor(planet, residentName, species) {
-    this.planet = planet;
-    this.resident = residentName;
-    this.species = species;
-  }
-}
 fetchDataPlanets();
